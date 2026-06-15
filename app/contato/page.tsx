@@ -136,7 +136,7 @@ export default function Contato() {
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
-                  <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "16px" }}>
+                  <div className="contact-form-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "16px" }}>
                     <div>
                       <label style={{ display: "block", fontSize: "12px", color: "var(--muted)", marginBottom: "6px", letterSpacing: "0.06em" }}>Nome completo *</label>
                       <input type="text" placeholder="Seu nome" required />

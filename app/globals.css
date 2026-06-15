@@ -471,7 +471,7 @@ select option { background: #121212; color: #fff; }
 .proj-nav-link:hover { background: var(--bg2); }
 
 /* ─── Hero illustration ─── */
-/* .hero-img is absolutely positioned inside the hero section; hidden on mobile below */
+.hero-mobile-img { display: none; }
 
 /* ─── Responsive ─── */
 @media (max-width: 767px) {
@@ -492,6 +492,22 @@ select option { background: #121212; color: #fff; }
     gap: 32px !important;
   }
 
+  .service-grid,
+  .contact-grid,
+  .project-grid {
+    grid-template-columns: 1fr !important;
+    gap: 48px !important;
+    direction: ltr !important;
+  }
+
+  .proj-nav-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .contact-form-grid {
+    grid-template-columns: 1fr !important;
+  }
+
   .post-layout {
     grid-template-columns: 1fr !important;
     gap: 48px !important;
@@ -505,7 +521,24 @@ select option { background: #121212; color: #fff; }
   .svc-card { padding: 28px; }
 
   .hero-img { display: none; }
-  .hero-section { background-image: none !important; }
+  .hero-section {
+    background-image: none !important;
+    padding-top: 100px !important;
+    padding-bottom: 60px !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    justify-content: flex-start !important;
+    min-height: auto !important;
+  }
+
+  .hero-mobile-img {
+    display: block;
+    width: 100%;
+    margin-bottom: 36px;
+    border-radius: var(--r-box);
+  }
+
+  .hero-text { max-width: 100% !important; }
 
   .cursor-dot,
   .cursor-ring { display: none !important; }

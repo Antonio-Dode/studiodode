@@ -197,7 +197,7 @@ export default async function ProjectPage({ params }: Props) {
 
       {/* NAV ENTRE PROJETOS */}
       <section style={{ borderBottom: "1px solid var(--line)" }}>
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr" }}>
+        <div className="proj-nav-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr" }}>
           {prev ? (
             <Link href={`/portfolio/${prev.slug}`} className="proj-nav-link" style={{ borderRight: "1px solid var(--line)" }}>
               <p style={{ fontSize: "11px", letterSpacing: "0.16em", textTransform: "uppercase", color: "var(--muted2)", marginBottom: "8px" }}>← Anterior</p>

@@ -44,8 +44,16 @@ export default function Home() {
       >
         <div style={{ position: "absolute", top: "-200px", right: "-100px", width: "700px", height: "700px", background: "radial-gradient(circle, rgba(114,0,204,0.12) 0%, transparent 70%)", pointerEvents: "none" }} />
 
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/assets/images/ilustra_dode_hero.png"
+          alt=""
+          aria-hidden="true"
+          className="hero-mobile-img"
+        />
+
         <div className="container">
-          <div style={{ maxWidth: "min(calc(58vw - 80px), 680px)" }}>
+          <div className="hero-text" style={{ maxWidth: "min(calc(58vw - 80px), 680px)" }}>
             <div className="kicker" style={{ animation: "fade 0.7s ease both", animationDelay: "0.1s" }}>
               DODÉ Studio Criativo
             </div>
