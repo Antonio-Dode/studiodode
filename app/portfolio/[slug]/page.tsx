@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 import { projects, getProjectBySlug, getAdjacentProjects } from "@/data/projects";
 import CtaFinal from "@/components/sections/CtaFinal";
+import VideoEmbed from "@/components/ui/VideoEmbed";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -80,13 +82,18 @@ export default async function ProjectPage({ params }: Props) {
               fontWeight: 700,
               letterSpacing: "-0.04em",
               lineHeight: 1.05,
-              marginBottom: "28px",
+              marginBottom: project.subtitle ? "12px" : "28px",
               maxWidth: "700px",
               animation: "fade 0.8s ease both",
             }}
           >
             {project.title}
           </h1>
+          {project.subtitle && (
+            <p style={{ fontSize: "16px", color: "var(--muted)", marginBottom: "28px", animation: "fade 0.8s ease both 0.1s" }}>
+              {project.subtitle}
+            </p>
+          )}
           <div style={{ display: "flex", gap: "32px", flexWrap: "wrap" }}>
             {[
               { label: "Cliente", value: project.client },
@@ -104,15 +111,56 @@ export default async function ProjectPage({ params }: Props) {
 
       {/* HERO IMAGE */}
       <section style={{ borderBottom: "1px solid var(--line)" }}>
-        <div style={{ aspectRatio: "16/7", background: "var(--bg3)", display: "flex", alignItems: "center", justifyContent: "center" }}>
-          <div style={{ textAlign: "center" }}>
-            <div style={{ fontSize: "40px", color: accent, opacity: 0.3, fontWeight: 700, letterSpacing: "-0.04em" }}>
-              {project.title}
-            </div>
-            <p style={{ fontSize: "13px", color: "var(--muted2)", marginTop: "8px" }}>⚠️ Imagem principal do projeto</p>
-          </div>
+        <div style={{ position: "relative", aspectRatio: "16/7", background: "var(--bg3)" }}>
+          <Image
+            src={project.heroImage}
+            alt={project.title}
+            fill
+            style={{ objectFit: "cover" }}
+            sizes="100vw"
+            priority
+          />
         </div>
       </section>
+
+      {/* INTRODUÇÃO NARRATIVA */}
+      {project.description && project.description.length > 0 && (
+        <section style={{ padding: "120px 0", borderBottom: "1px solid var(--line)" }}>
+          <div className="container" style={{ maxWidth: "800px" }}>
+            <p className="kicker rev">O projeto</p>
+            <p
+              className="rev"
+              style={{
+                fontSize: "clamp(18px, 2vw, 22px)",
+                fontWeight: 400,
+                lineHeight: 1.65,
+                color: "#fff",
+                marginBottom: "28px",
+                transitionDelay: "0.1s",
+                fontFamily: "var(--serif)",
+                fontStyle: "italic",
+              }}
+            >
+              {project.description[0]}
+            </p>
+            {project.description.slice(1).map((para, i) => (
+              <p
+                key={i}
+                className="rev"
+                style={{
+                  fontSize: "16px",
+                  color: "var(--muted)",
+                  lineHeight: 1.8,
+                  marginBottom: i < project.description!.length - 2 ? "20px" : "0",
+                  transitionDelay: `${0.15 + i * 0.08}s`,
+                }}
+              >
+                {para}
+              </p>
+            ))}
+          </div>
+        </section>
+      )}
 
       {/* DESAFIO + SOLUÇÃO */}
       <section style={{ padding: "140px 0", borderBottom: "1px solid var(--line)" }}>
@@ -168,32 +216,54 @@ export default async function ProjectPage({ params }: Props) {
         </section>
       )}
 
-      {/* GALERIA */}
-      <section style={{ padding: "80px 0", borderBottom: "1px solid var(--line)" }}>
-        <div className="container">
-          <p className="kicker rev">Galeria</p>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))", gap: "16px", marginTop: "40px" }}>
-            {[1, 2, 3].map((n) => (
-              <div
-                key={n}
-                className="rev"
-                style={{
-                  background: "var(--bg3)",
-                  border: "1px solid var(--line)",
-                  borderRadius: "var(--r-box)",
-                  aspectRatio: "4/3",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  transitionDelay: `${(n - 1) * 0.1}s`,
-                }}
-              >
-                <span style={{ fontSize: "12px", color: "var(--muted2)" }}>⚠️ Imagem {n}</span>
-              </div>
-            ))}
+      {/* VÍDEO */}
+      {project.video && (
+        <section style={{ padding: "80px 0", borderBottom: "1px solid var(--line)" }}>
+          <div className="container" style={{ maxWidth: "900px" }}>
+            <p className="kicker rev">Vídeo</p>
+            <div className="rev" style={{ marginTop: "40px", transitionDelay: "0.1s" }}>
+              <VideoEmbed
+                youtubeId={project.video.youtubeId}
+                thumbnail={project.video.thumbnail}
+                title={project.title}
+              />
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
+
+      {/* GALERIA */}
+      {project.gallery.length > 0 && (
+        <section style={{ padding: "80px 0", borderBottom: "1px solid var(--line)" }}>
+          <div className="container">
+            <p className="kicker rev">Galeria</p>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))", gap: "16px", marginTop: "40px" }}>
+              {project.gallery.map((src, i) => (
+                <div
+                  key={i}
+                  className="rev"
+                  style={{
+                    position: "relative",
+                    borderRadius: "var(--r-box)",
+                    overflow: "hidden",
+                    aspectRatio: "4/3",
+                    background: "var(--bg3)",
+                    transitionDelay: `${i * 0.08}s`,
+                  }}
+                >
+                  <Image
+                    src={src}
+                    alt={`${project.title} — imagem ${i + 1}`}
+                    fill
+                    style={{ objectFit: "cover" }}
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* NAV ENTRE PROJETOS */}
       <section style={{ borderBottom: "1px solid var(--line)" }}>

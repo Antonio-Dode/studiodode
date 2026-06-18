@@ -3,21 +3,58 @@ export type ProjectCategory = "branddesign" | "websites" | "campanhas" | "fotovi
 export interface Project {
   slug: string;
   title: string;
+  subtitle?: string;
   client: string;
   year: string;
   category: ProjectCategory;
   services: string[];
   externalUrl?: string;
+  description?: string[];
   heroImage: string;
   gallery: string[];
+  video?: { youtubeId?: string; thumbnail: string };
   challenge: { headline: string; text: string };
-  solution: { headline: string; text: string; image: string };
+  solution: { headline: string; text: string; image?: string };
   results: { metric: string; value: string }[];
   testimonial?: { text: string; name: string; role: string; photo: string };
 }
 
-// Projetos reais serão inseridos aqui
 export const projects: Project[] = [
+  {
+    slug: "vila-marau-ii",
+    title: "Vila Maraú II",
+    subtitle: "Complexo residencial e turístico na costa do dendê, Bahia.",
+    client: "Vila Maraú II",
+    year: "2024",
+    category: "branddesign",
+    services: ["Brand Design", "Identidade Visual", "Construção de Marca"],
+    description: [
+      "Maraú não é um lugar que se explica. É um lugar que se sente.",
+      "O desafio era transformar essa sensação em marca. Criar uma identidade que carregasse luxo sem peso, natureza sem rusticidade, Bahia sem clichê.",
+      "A solução veio do próprio lugar. A brisa que move as palmeiras e desenha sombras no chão virou ícone. O verde profundo da mata costeira e o dourado da areia iluminada viraram paleta. A tipografia encontrou o equilíbrio entre o clássico e o contemporâneo, elegante como quem mora bem e leve como quem vive à beira mar.",
+      "Vila Maraú II é uma marca que não precisa gritar para ser notada. Ela existe com a mesma naturalidade do lugar que representa.",
+    ],
+    heroImage: "/assets/images/portfolio/vila-marau-ii/port_vila_marau_1.jpg",
+    gallery: [
+      "/assets/images/portfolio/vila-marau-ii/port_vila_marau_2.jpg",
+      "/assets/images/portfolio/vila-marau-ii/port_vila_marau_3.jpg",
+      "/assets/images/portfolio/vila-marau-ii/port_vila_marau_5.jpg",
+      "/assets/images/portfolio/vila-marau-ii/port_vila_marau_6.jpg",
+      "/assets/images/portfolio/vila-marau-ii/port_vila_marau_7.jpg",
+    ],
+    video: {
+      thumbnail: "/assets/images/portfolio/vila-marau-ii/port_vila_marau_4.jpg",
+    },
+    challenge: {
+      headline: "Transformar uma sensação em marca.",
+      text: "Criar uma identidade que carregasse luxo sem peso, natureza sem rusticidade, Bahia sem clichê.",
+    },
+    solution: {
+      headline: "Uma identidade nascida do próprio lugar.",
+      text: "Do ícone à paleta, da tipografia ao sistema de marca — cada elemento encontrou seu referente no próprio território.",
+    },
+    results: [],
+  },
   {
     slug: "projeto-placeholder-1",
     title: "Identidade Visual — Placeholder",
