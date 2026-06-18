@@ -34,27 +34,42 @@ export default function PortfolioCard({ slug, title, client, category, heroImage
   return (
     <Link
       href={`/portfolio/${slug}`}
-      style={{ display: "block", borderRadius: "var(--r-box)", overflow: "hidden", position: "relative", aspectRatio: "4/3", background: "var(--bg3)" }}
+      style={{
+        display: "block",
+        borderRadius: "var(--r-box)",
+        overflow: "hidden",
+        position: "relative",
+        aspectRatio: "4/3",
+        background: "var(--bg3)",
+      }}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
+      {/* Image */}
       <Image
         src={heroImage}
         alt={title}
         fill
-        style={{ objectFit: "cover", transition: "transform 0.6s ease", transform: hovered ? "scale(1.06)" : "scale(1)" }}
+        style={{
+          objectFit: "cover",
+          transition: "transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94)",
+          transform: hovered ? "scale(1.07)" : "scale(1)",
+        }}
         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
       />
-      {/* Overlay */}
+
+      {/* Overlay — hidden at rest, fades in on hover */}
       <div
         style={{
           position: "absolute",
           inset: 0,
-          background: hovered ? "linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.85) 100%)" : "linear-gradient(180deg, transparent 40%, rgba(0,0,0,0.7) 100%)",
-          transition: "background 0.4s ease",
+          background: "linear-gradient(180deg, rgba(0,0,0,0.08) 0%, rgba(0,0,0,0.82) 100%)",
+          opacity: hovered ? 1 : 0,
+          transition: "opacity 0.4s ease",
         }}
       />
-      {/* Category pill */}
+
+      {/* Category — top left, only on hover */}
       <div
         style={{
           position: "absolute",
@@ -65,40 +80,43 @@ export default function PortfolioCard({ slug, title, client, category, heroImage
           textTransform: "uppercase",
           padding: "5px 12px",
           borderRadius: "4px",
-          background: "rgba(0,0,0,0.6)",
+          background: "rgba(0,0,0,0.55)",
           color: categoryColor[category],
-          border: `1px solid ${categoryColor[category]}40`,
+          border: `1px solid ${categoryColor[category]}50`,
           backdropFilter: "blur(8px)",
+          opacity: hovered ? 1 : 0,
+          transform: hovered ? "translateY(0)" : "translateY(-6px)",
+          transition: "opacity 0.35s ease, transform 0.35s ease",
         }}
       >
         {categoryLabel[category]}
       </div>
-      {/* Info */}
+
+      {/* Info — bottom, slides up on hover */}
       <div
         style={{
           position: "absolute",
           bottom: 0,
           left: 0,
           right: 0,
-          padding: "20px",
-          transform: hovered ? "translateY(0)" : "translateY(4px)",
-          transition: "transform 0.4s ease",
+          padding: "24px 20px",
+          opacity: hovered ? 1 : 0,
+          transform: hovered ? "translateY(0)" : "translateY(12px)",
+          transition: "opacity 0.35s ease 0.05s, transform 0.35s ease 0.05s",
         }}
       >
-        <p style={{ fontSize: "12px", color: "rgba(255,255,255,0.5)", marginBottom: "4px" }}>
+        <p style={{ fontSize: "11px", color: "rgba(255,255,255,0.45)", marginBottom: "5px", letterSpacing: "0.04em" }}>
           {client} · {year}
         </p>
-        <h3 style={{ fontSize: "18px", fontWeight: 700, letterSpacing: "-0.02em", color: "#fff" }}>
+        <h3 style={{ fontSize: "19px", fontWeight: 700, letterSpacing: "-0.02em", color: "#fff", lineHeight: 1.2 }}>
           {title}
         </h3>
         <p
           style={{
             fontSize: "12px",
-            color: "var(--verde)",
-            marginTop: "8px",
-            opacity: hovered ? 1 : 0,
-            transform: hovered ? "translateY(0)" : "translateY(6px)",
-            transition: "all 0.3s ease 0.05s",
+            color: categoryColor[category],
+            marginTop: "10px",
+            letterSpacing: "0.04em",
           }}
         >
           Ver projeto →
