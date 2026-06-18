@@ -31,12 +31,6 @@ const timeline = [
   },
 ];
 
-const formacao = [
-  { color: "roxo", school: "Panamericana", course: "Criação e Arte para Web", city: "São Paulo", year: "2016" },
-  { color: "amarelo", school: "CEUNSP", course: "Publicidade e Propaganda", city: "Salto", year: "2012" },
-  { color: "verde", school: "Cefet/PR", course: "Produção Gráfica", city: "Curitiba", year: "2003" },
-];
-
 const competencias = {
   criacao: ["Direção de Arte", "Identidade Visual e Branding", "Design Gráfico Digital e Impresso", "Fotografia e Vídeo", "Animação e Motion"],
   digital: ["UX/UI e Produto Digital", "Campanhas de Performance", "Gestão de Projetos Criativos", "Web Design e Desenvolvimento", "Adobe Creative Suite · Figma"],
@@ -71,8 +65,8 @@ export default function QuemSou() {
               maxWidth: "700px",
             }}
           >
-            Quase duas décadas formando o olhar.{" "}
-            <span className="serif-it" style={{ color: "var(--roxo)" }}>Agora direto com você.</span>
+            Experiência que entrega{" "}
+            <span className="serif-it" style={{ color: "var(--roxo)" }}>resultados.</span>
           </h1>
           <p
             style={{
@@ -83,7 +77,7 @@ export default function QuemSou() {
               animation: "fade 0.8s ease both 0.3s",
             }}
           >
-            Sem intermediários. Sem estrutura pesada. Só criação com direção.
+            Sem intermediários. Sem estrutura pesada. Só criação com qualidade que vai te trazer resultados reais.
           </p>
         </div>
       </section>
@@ -147,7 +141,7 @@ export default function QuemSou() {
                   Em algum momento ficou claro: o cliente pagava pelo tamanho da estrutura, não pelo resultado.
                 </p>
                 <p>
-                  O DODÉ nasceu para mudar isso. Criação de alto nível, direto com quem faz.
+                  Meu estúdio nasceu para mudar isso. Criação de alto nível, com atendimento e suporte direto com quem faz.
                 </p>
               </div>
               <div style={{ display: "flex", flexWrap: "wrap", gap: "8px", marginTop: "32px" }}>
@@ -188,34 +182,8 @@ export default function QuemSou() {
         </div>
       </section>
 
-      {/* FORMAÇÃO */}
-      <section style={{ padding: "140px 0", borderBottom: "1px solid var(--line)" }}>
-        <div className="container">
-          <p className="kicker rev">Formação</p>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: "var(--card-gap)", marginTop: "52px" }}>
-            {formacao.map((f, i) => (
-              <div
-                key={i}
-                className={`svc-card sc-${f.color} rev`}
-                style={{ transitionDelay: `${i * 0.1}s` }}
-              >
-                <div style={{ fontSize: "11px", letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--muted2)", marginBottom: "16px" }}>
-                  {f.city} · {f.year}
-                </div>
-                <h3 style={{ fontSize: "17px", fontWeight: 700, letterSpacing: "-0.02em", marginBottom: "8px" }}>
-                  {f.school}
-                </h3>
-                <p style={{ fontSize: "14px", color: "var(--muted)", lineHeight: 1.5 }}>
-                  {f.course}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* COMPETÊNCIAS */}
-      <section style={{ padding: "140px 0", background: "var(--bg2)", borderBottom: "1px solid var(--line)" }}>
+      <section style={{ padding: "140px 0", borderBottom: "1px solid var(--line)" }}>
         <div className="container">
           <p className="kicker rev">O que domino</p>
           <h2 className="rev" style={{ fontSize: "clamp(24px, 3.5vw, 42px)", fontWeight: 400, letterSpacing: "-0.03em", lineHeight: 1.1, marginBottom: "64px", maxWidth: "500px", transitionDelay: "0.1s" }}>
@@ -263,16 +231,22 @@ export default function QuemSou() {
             <p
               className="rev"
               style={{
-                fontSize: "clamp(16px, 2vw, 24px)",
-                fontWeight: 400,
-                lineHeight: 1.6,
+                fontSize: "clamp(20px, 2.8vw, 34px)",
+                fontWeight: 700,
+                lineHeight: 1.4,
                 color: "#000",
+                letterSpacing: "-0.02em",
                 marginBottom: "32px",
               }}
             >
-              "Processo não é desculpa para atraso.<br />
-              Reunião que pode ser mensagem não deveria existir.<br />
-              Trabalho bem feito, entregue no prazo, por quem assina embaixo."
+              Processo não é desculpa{" "}
+              <span className="serif-it" style={{ fontWeight: 400 }}>para atraso.</span>
+              <br />
+              Reunião que pode ser mensagem{" "}
+              <span className="serif-it" style={{ fontWeight: 400 }}>não deveria existir.</span>
+              <br />
+              Trabalho bem feito, entregue no prazo,{" "}
+              <span className="serif-it" style={{ fontWeight: 400 }}>por quem realmente faz, sem telefone sem fio.</span>
             </p>
             <footer className="rev" style={{ fontSize: "14px", fontWeight: 600, letterSpacing: "0.1em", color: "rgba(0,0,0,0.6)", transitionDelay: "0.15s" }}>
               — Dodé
