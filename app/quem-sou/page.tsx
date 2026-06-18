@@ -239,14 +239,11 @@ export default function QuemSou() {
                 marginBottom: "32px",
               }}
             >
-              Processo não é desculpa{" "}
-              <span className="serif-it" style={{ fontWeight: 400 }}>para atraso.</span>
+              Processo não é <span className="serif-it" style={{ fontWeight: 400 }}>desculpa</span> para atraso.
               <br />
-              Reunião que pode ser mensagem{" "}
-              <span className="serif-it" style={{ fontWeight: 400 }}>não deveria existir.</span>
+              Reunião que pode ser <span className="serif-it" style={{ fontWeight: 400 }}>mensagem</span> não deveria existir.
               <br />
-              Trabalho bem feito, entregue no prazo,{" "}
-              <span className="serif-it" style={{ fontWeight: 400 }}>por quem realmente faz, sem telefone sem fio.</span>
+              Trabalho bem feito, entregue no prazo, por quem <span className="serif-it" style={{ fontWeight: 400 }}>realmente</span> faz, sem telefone sem fio.
             </p>
             <footer className="rev" style={{ fontSize: "14px", fontWeight: 600, letterSpacing: "0.1em", color: "rgba(0,0,0,0.6)", transitionDelay: "0.15s" }}>
               — Dodé
