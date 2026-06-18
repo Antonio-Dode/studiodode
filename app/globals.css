@@ -546,6 +546,38 @@ select option { background: #121212; color: #fff; }
   .scroll-top { bottom: 20px; right: 16px; }
 }
 
+/* ─── Article Body (Blog) ─── */
+.article-body { font-size: 16px; line-height: 1.85; color: var(--muted); }
+.article-body p { margin-bottom: 22px; }
+.article-body h2 {
+  font-size: clamp(18px, 2.4vw, 26px);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+  color: #fff;
+  margin-top: 56px;
+  margin-bottom: 16px;
+}
+.article-body strong { color: #fff; font-weight: 700; }
+.article-body em { font-style: italic; }
+.article-body a { color: var(--verde); text-decoration: underline; text-underline-offset: 3px; }
+.article-body a:hover { color: #fff; }
+.article-body hr {
+  border: none;
+  border-top: 1px solid var(--line);
+  margin: 48px 0;
+}
+.article-cta {
+  margin-top: 56px;
+  padding: 32px 36px;
+  border-left: 3px solid var(--verde);
+  background: var(--bg2);
+  border-radius: 0 var(--r-box) var(--r-box) 0;
+}
+.article-cta p { margin-bottom: 12px; }
+.article-cta p:last-child { margin-bottom: 0; }
+.article-cta strong { color: #fff; }
+
 /* ─── Timeline ─── */
 .timeline-item { position: relative; padding-left: 52px; padding-bottom: 64px; }
 .timeline-item::before {

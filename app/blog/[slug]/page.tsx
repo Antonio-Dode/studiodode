@@ -80,17 +80,10 @@ export default async function BlogPost({ params }: Props) {
         <div className="container">
           <div style={{ display: "grid", gridTemplateColumns: "1fr 300px", gap: "var(--col-gap)", alignItems: "start" }} className="post-layout">
             {/* Content */}
-            <article>
-              <p style={{ fontSize: "17px", color: "#fff", lineHeight: 1.65, marginBottom: "24px", fontWeight: 500 }}>
-                {post.excerpt}
-              </p>
-              <p style={{ fontSize: "16px", color: "var(--muted)", lineHeight: 1.8 }}>
-                {post.content.replace(/^#.*\n/, "")}
-              </p>
-              <p style={{ color: "var(--muted2)", fontStyle: "italic", marginTop: "40px", fontSize: "15px" }}>
-                ⚠️ Conteúdo completo a inserir em <code>/data/posts.ts</code>.
-              </p>
-            </article>
+            <article
+              className="article-body"
+              dangerouslySetInnerHTML={{ __html: post.content }}
+            />
 
             {/* Sidebar */}
             <aside style={{ position: "sticky", top: "100px" }}>
