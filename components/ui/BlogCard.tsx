@@ -26,7 +26,7 @@ const categoryLabel: Record<BlogCategory, string> = {
 const categoryColor: Record<BlogCategory, string> = {
   criacao: "var(--roxo)",
   branding: "var(--amarelo)",
-  marketing: "var(--verde)",
+  marketing: "var(--coral)",
   mercado: "var(--coral)",
   processo: "var(--muted)",
 };

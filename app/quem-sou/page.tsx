@@ -72,7 +72,7 @@ export default function QuemSou() {
             }}
           >
             Quase duas décadas formando o olhar.{" "}
-            <span className="serif-it" style={{ color: "var(--verde)" }}>Agora direto com você.</span>
+            <span className="serif-it" style={{ color: "var(--roxo)" }}>Agora direto com você.</span>
           </h1>
           <p
             style={{
@@ -83,7 +83,7 @@ export default function QuemSou() {
               animation: "fade 0.8s ease both 0.3s",
             }}
           >
-            Sem intermediários. Sem overhead de agência. Só criação com direção e entrega com responsabilidade.
+            Sem intermediários. Sem estrutura pesada. Só criação com direção.
           </p>
         </div>
       </section>
@@ -134,7 +134,7 @@ export default function QuemSou() {
                   marginBottom: "24px",
                 }}
               >
-                Sou o <span className="serif-it" style={{ color: "var(--verde)" }}>Dodé.</span>
+                Sou o <span className="serif-it" style={{ color: "var(--roxo)" }}>Dodé.</span>
               </h2>
               <div style={{ fontSize: "15px", color: "var(--muted)", lineHeight: 1.8 }}>
                 <p style={{ marginBottom: "16px" }}>
@@ -147,12 +147,12 @@ export default function QuemSou() {
                   Em algum momento ficou claro: o cliente pagava pelo tamanho da estrutura, não pelo resultado.
                 </p>
                 <p>
-                  O DODÉ nasceu para mudar isso. Criação de alto nível, acesso direto a quem faz, sem o peso de quem não faz.
+                  O DODÉ nasceu para mudar isso. Criação de alto nível, direto com quem faz.
                 </p>
               </div>
               <div style={{ display: "flex", flexWrap: "wrap", gap: "8px", marginTop: "32px" }}>
                 {chips.map((chip) => (
-                  <span key={chip} className="tag-pill tp-verde">{chip}</span>
+                  <span key={chip} className="tag-pill tp-roxo">{chip}</span>
                 ))}
               </div>
             </div>
@@ -172,7 +172,7 @@ export default function QuemSou() {
               <div key={i} className="timeline-item rev" style={{ transitionDelay: `${i * 0.1}s` }}>
                 <div className="timeline-dot" />
                 <div>
-                  <div style={{ fontSize: "12px", letterSpacing: "0.16em", textTransform: "uppercase", color: "var(--verde)", marginBottom: "6px", fontWeight: 600 }}>
+                  <div style={{ fontSize: "12px", letterSpacing: "0.16em", textTransform: "uppercase", color: "var(--roxo)", marginBottom: "6px", fontWeight: 600 }}>
                     {item.year}
                   </div>
                   <h3 style={{ fontSize: "16px", fontWeight: 600, marginBottom: "8px", letterSpacing: "-0.01em" }}>
@@ -270,9 +270,9 @@ export default function QuemSou() {
                 marginBottom: "32px",
               }}
             >
-              "Não acredito em processo que serve de desculpa para atraso.<br />
-              Não acredito em reunião que poderia ser uma mensagem.<br />
-              Acredito em trabalho bem feito, entregue no prazo, por quem assina embaixo."
+              "Processo não é desculpa para atraso.<br />
+              Reunião que pode ser mensagem não deveria existir.<br />
+              Trabalho bem feito, entregue no prazo, por quem assina embaixo."
             </p>
             <footer className="rev" style={{ fontSize: "14px", fontWeight: 600, letterSpacing: "0.1em", color: "rgba(0,0,0,0.6)", transitionDelay: "0.15s" }}>
               — Dodé

@@ -62,7 +62,7 @@ export default function Home() {
               <span className="serif-it" style={{ color: "var(--verde)" }}>direto com quem faz.</span>
             </h1>
             <p style={{ fontSize: "17px", color: "var(--muted)", maxWidth: "540px", lineHeight: 1.7, marginBottom: "52px", animation: "fade 0.8s ease both", animationDelay: "0.35s" }}>
-              Sem agência no meio. Sem processo que atrasa. O mesmo nível de criação das melhores agências — entregue por quem assina embaixo.
+              Sem agência no meio. Sem processo que atrasa. Criação de alto nível, entregue por quem assina embaixo.
             </p>
             <div style={{ display: "flex", gap: "16px", flexWrap: "wrap", animation: "fade 0.8s ease both", animationDelay: "0.5s" }}>
               <Link href="/contato" className="btn btn-pri">Vamos conversar</Link>

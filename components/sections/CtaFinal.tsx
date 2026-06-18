@@ -11,7 +11,7 @@ interface CtaFinalProps {
 
 export default function CtaFinal({
   headline = "Pare de pagar caro por pouco.",
-  subhead = "Converse comigo. Sem formulário chato, sem reunião de alinhamento. Comigo você tem o que precisa ser feito.",
+  subhead = "Converse comigo. Sem formulário chato, sem reunião de alinhamento. Só o que você precisa, feito.",
   cta1Label = "Falar no WhatsApp",
   cta1Href = "https://wa.me/5511974531399",
   cta2Label = "Ver o portfólio",
