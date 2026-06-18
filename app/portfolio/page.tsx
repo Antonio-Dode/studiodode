@@ -3,7 +3,6 @@ import { useState } from "react";
 import PortfolioCard from "@/components/ui/PortfolioCard";
 import CtaFinal from "@/components/sections/CtaFinal";
 import { projects, type ProjectCategory } from "@/data/projects";
-import Link from "next/link";
 
 type Filter = "all" | ProjectCategory;
 
@@ -71,27 +70,12 @@ export default function Portfolio() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section style={{ padding: "120px 0", borderTop: "1px solid var(--line)", borderBottom: "1px solid var(--line)" }}>
-        <div className="container" style={{ textAlign: "center" }}>
-          <h2 className="rev" style={{ fontSize: "clamp(22px, 3vw, 36px)", fontWeight: 400, letterSpacing: "-0.03em", marginBottom: "12px" }}>
-            Gostou do que viu?
-          </h2>
-          <p className="rev" style={{ fontSize: "15px", color: "var(--muted)", marginBottom: "52px", transitionDelay: "0.1s" }}>
-            Imagine o que posso fazer pelo seu negócio.
-          </p>
-          <div className="rev" style={{ display: "flex", gap: "14px", justifyContent: "center", flexWrap: "wrap", transitionDelay: "0.2s" }}>
-            <a href="https://wa.me/5511974531399" target="_blank" rel="noopener noreferrer" className="btn btn-aurora">
-              Falar no WhatsApp
-            </a>
-            <Link href="/o-que-eu-faco" className="btn btn-ghost">
-              Ver o que eu faço
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      <CtaFinal />
+      <CtaFinal
+        headline="Gostou do que viu?"
+        subhead="Imagine o que posso fazer pelo seu negócio."
+        cta2Label="Ver o que eu faço"
+        cta2Href="/o-que-eu-faco"
+      />
     </>
   );
 }
