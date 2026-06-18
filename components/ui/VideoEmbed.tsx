@@ -15,7 +15,7 @@ export default function VideoEmbed({ youtubeId, thumbnail, title = "Vídeo do pr
     return (
       <div style={{ position: "relative", width: "100%", aspectRatio: "16/9", borderRadius: "var(--r-box)", overflow: "hidden", background: "#000" }}>
         <iframe
-          src={`https://www.youtube.com/embed/${youtubeId}?autoplay=1&rel=0`}
+          src={`https://www.youtube.com/embed/${youtubeId}?autoplay=1&rel=0&modestbranding=1&iv_load_policy=3&color=white`}
           title={title}
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen

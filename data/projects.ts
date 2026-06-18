@@ -43,6 +43,7 @@ export const projects: Project[] = [
       "/assets/images/portfolio/vila-marau-ii/port_vila_marau_7.jpg",
     ],
     video: {
+      youtubeId: "5vUCydAG_bk",
       thumbnail: "/assets/images/portfolio/vila-marau-ii/port_vila_marau_4.jpg",
     },
     challenge: {
