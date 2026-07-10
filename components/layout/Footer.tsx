@@ -146,11 +146,16 @@ export default function Footer() {
           }}
         >
           <p style={{ fontSize: "12px", color: "var(--muted2)" }}>
-            © 2025 DODÉ Studio Criativo — Antonio José Alves
+            © 2025 DODÉ Studio Criativo — Antonio José Alves · CNPJ 32.638.568/0001-29
           </p>
-          <p style={{ fontSize: "12px", color: "var(--muted2)" }}>
-            studiodode.com.br
-          </p>
+          <Link
+            href="/politica-de-privacidade"
+            style={{ fontSize: "12px", color: "var(--muted2)", transition: "color 0.2s" }}
+            onMouseEnter={(e) => ((e.target as HTMLElement).style.color = "#fff")}
+            onMouseLeave={(e) => ((e.target as HTMLElement).style.color = "var(--muted2)")}
+          >
+            Política de Privacidade
+          </Link>
         </div>
       </div>
     </footer>

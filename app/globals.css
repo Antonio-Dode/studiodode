@@ -546,6 +546,34 @@ select option { background: #121212; color: #fff; }
   .scroll-top { bottom: 20px; right: 16px; }
 }
 
+/* ─── Cookie / LGPD Banner ─── */
+.cookie-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 9000;
+  padding: 20px clamp(20px, 4vw, 60px);
+  background: rgba(8, 8, 8, 0.97);
+  border-top: 1px solid var(--line);
+  backdrop-filter: blur(14px);
+  animation: fade 0.4s ease both;
+}
+.cookie-banner-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+.cookie-banner-text { flex: 1; min-width: 260px; }
+.cookie-title { font-size: 14px; font-weight: 700; color: #fff; margin-bottom: 5px; }
+.cookie-desc { font-size: 13px; color: var(--muted); line-height: 1.6; }
+.cookie-desc a { color: var(--verde); text-decoration: underline; text-underline-offset: 2px; }
+.cookie-banner-actions { display: flex; gap: 10px; flex-shrink: 0; flex-wrap: wrap; }
+.cookie-btn { padding: 11px 22px !important; font-size: 13px !important; }
+
 /* ─── Article Body (Blog) ─── */
 .article-body { font-size: 16px; line-height: 1.85; color: var(--muted); }
 .article-body p { margin-bottom: 22px; }

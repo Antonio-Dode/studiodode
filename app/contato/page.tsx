@@ -1,6 +1,7 @@
 "use client";
 import type { Metadata } from "next";
 import { useState } from "react";
+import Link from "next/link";
 
 const faqs = [
   {
@@ -167,8 +168,12 @@ export default function Contato() {
                   </div>
                   <div style={{ display: "flex", alignItems: "flex-start", gap: "10px" }}>
                     <input type="checkbox" required style={{ width: "auto", marginTop: "3px", flexShrink: 0 }} id="privacy" />
-                    <label htmlFor="privacy" style={{ fontSize: "13px", color: "var(--muted)", cursor: "pointer" }}>
-                      Concordo com a política de privacidade
+                    <label htmlFor="privacy" style={{ fontSize: "13px", color: "var(--muted)", cursor: "pointer", lineHeight: 1.55 }}>
+                      Li e concordo com a{" "}
+                      <Link href="/politica-de-privacidade" style={{ color: "var(--verde)", textDecoration: "underline", textUnderlineOffset: "2px" }}>
+                        Política de Privacidade
+                      </Link>
+                      {" "}e autorizo o uso dos meus dados para retorno de contato, conforme a LGPD (Lei 13.709/2018). *
                     </label>
                   </div>
                   <button type="submit" className="btn btn-aurora" style={{ width: "100%", justifyContent: "center", fontSize: "15px", padding: "16px" }}>
