@@ -107,10 +107,10 @@ export default function Home() {
           <div className="rev" style={{ background: "var(--aurora)", borderRadius: "var(--r-box)", padding: "56px 64px", display: "flex", alignItems: "center", justifyContent: "space-between", gap: "48px", flexWrap: "wrap" }}>
             <div>
               <h3 style={{ fontSize: "24px", fontWeight: 700, letterSpacing: "-0.02em", color: "#000", marginBottom: "12px" }}>
-                E tudo mais que criação precisar ser.
+                E tudo mais que precisa para vender seus produtos e divulgar sua marca.
               </h3>
               <p style={{ fontSize: "16px", color: "rgba(0,0,0,0.7)", maxWidth: "500px", lineHeight: 1.65 }}>
-                Digital ou impresso. Animado ou estático. Pequeno ou grande. Se existe dentro de publicidade e marketing — eu faço.
+                Digital ou impresso. Animado ou estático. Pequeno ou grande. Se eu não faço, acho a pessoa certa para fazer.
               </p>
             </div>
             <Link href="/o-que-eu-faco" className="btn btn-dark" style={{ flexShrink: 0 }}>Ver todos os serviços</Link>
