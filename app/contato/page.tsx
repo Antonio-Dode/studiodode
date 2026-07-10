@@ -61,15 +61,6 @@ export default function Contato() {
           <p style={{ fontSize: "16px", color: "var(--muted)", maxWidth: "460px", lineHeight: 1.65, marginBottom: "20px", animation: "fade 0.8s ease both 0.3s" }}>
             Me conta o que você precisa. Sem burocracia, sem enrolação.
           </p>
-          <div style={{ display: "flex", gap: "24px", flexWrap: "wrap", animation: "fade 0.8s ease both 0.45s" }}>
-            {[
-              { label: "Itu, SP", icon: "📍" },
-              { label: "(11) 97453-1399", icon: "📱" },
-              { label: "studiodode.com.br", icon: "🌐" },
-            ].map((item) => (
-              <span key={item.label} style={{ fontSize: "14px", color: "var(--muted2)" }}>{item.icon} {item.label}</span>
-            ))}
-          </div>
         </div>
       </section>
 
