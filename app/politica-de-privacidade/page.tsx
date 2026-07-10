@@ -148,9 +148,9 @@ export default function PoliticaDePrivacidade() {
               <p style={{ marginBottom: "6px" }}>Antonio José Alves</p>
               <p style={{ marginBottom: "0" }}>E-mail: <a href="mailto:privacidade@studiodode.com.br" style={{ color: "var(--verde)" }}>privacidade@studiodode.com.br</a></p>
             </div>
-            <P style={{ marginTop: "16px" }}>
+            <p style={{ marginTop: "16px", fontSize: "15px", color: "var(--muted)", lineHeight: 1.85 }}>
               Você também pode registrar reclamações perante a <strong style={{ color: "#fff" }}>Autoridade Nacional de Proteção de Dados (ANPD)</strong> em <a href="https://www.gov.br/anpd" target="_blank" rel="noopener noreferrer" style={{ color: "var(--verde)" }}>www.gov.br/anpd</a>.
-            </P>
+            </p>
           </Section>
 
           <div style={{ borderTop: "1px solid var(--line)", paddingTop: "32px", fontSize: "13px", color: "var(--muted2)" }}>
