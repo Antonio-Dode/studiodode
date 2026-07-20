@@ -12,6 +12,7 @@ export interface Project {
   description?: string[];
   heroImage: string;
   gallery: string[];
+  galleryLayout?: Array<string | string[] | 'video'>;
   video?: { youtubeId?: string; thumbnail: string };
   challenge: { headline: string; text: string };
   solution: { headline: string; text: string; image?: string };
@@ -34,17 +35,22 @@ export const projects: Project[] = [
       "A solução veio do próprio lugar. A brisa que move as palmeiras e desenha sombras no chão virou ícone. O verde profundo da mata costeira e o dourado da areia iluminada viraram paleta. A tipografia encontrou o equilíbrio entre o clássico e o contemporâneo, elegante como quem mora bem e leve como quem vive à beira mar.",
       "Vila Maraú II é uma marca que não precisa gritar para ser notada. Ela existe com a mesma naturalidade do lugar que representa.",
     ],
-    heroImage: "/assets/images/portfolio/vila-marau-ii/port_vila_marau_1.jpg",
-    gallery: [
-      "/assets/images/portfolio/vila-marau-ii/port_vila_marau_2.jpg",
-      "/assets/images/portfolio/vila-marau-ii/port_vila_marau_3.jpg",
-      "/assets/images/portfolio/vila-marau-ii/port_vila_marau_5.jpg",
-      "/assets/images/portfolio/vila-marau-ii/port_vila_marau_6.jpg",
-      "/assets/images/portfolio/vila-marau-ii/port_vila_marau_7.jpg",
+    heroImage: "/assets/images/portfolio/vila-marau-ii/port_vila_marau_0.png",
+    gallery: [],
+    galleryLayout: [
+      "/assets/images/portfolio/vila-marau-ii/port_vila_marau_1.png",
+      [
+        "/assets/images/portfolio/vila-marau-ii/port_vila_marau_2.png",
+        "/assets/images/portfolio/vila-marau-ii/port_vila_marau_3.png",
+      ],
+      "video",
+      "/assets/images/portfolio/vila-marau-ii/port_vila_marau_5.png",
+      "/assets/images/portfolio/vila-marau-ii/port_vila_marau_6.png",
+      "/assets/images/portfolio/vila-marau-ii/port_vila_marau_7.png",
     ],
     video: {
       youtubeId: "5vUCydAG_bk",
-      thumbnail: "/assets/images/portfolio/vila-marau-ii/port_vila_marau_4.jpg",
+      thumbnail: "/assets/images/portfolio/vila-marau-ii/port_vila_marau_4.png",
     },
     challenge: {
       headline: "Transformar uma sensação em marca.",

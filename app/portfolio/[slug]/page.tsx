@@ -216,8 +216,8 @@ export default async function ProjectPage({ params }: Props) {
         </section>
       )}
 
-      {/* VÍDEO */}
-      {project.video && (
+      {/* VÍDEO (standalone — só quando não há galleryLayout) */}
+      {project.video && !project.galleryLayout && (
         <section style={{ padding: "80px 0", borderBottom: "1px solid var(--line)" }}>
           <div className="container" style={{ maxWidth: "900px" }}>
             <p className="kicker rev">Vídeo</p>
@@ -232,31 +232,74 @@ export default async function ProjectPage({ params }: Props) {
         </section>
       )}
 
-      {/* GALERIA */}
-      {project.gallery.length > 0 && (
+      {/* GALERIA EDITORIAL (com galleryLayout) */}
+      {project.galleryLayout && project.galleryLayout.length > 0 && (
+        <section style={{ paddingTop: "80px", borderBottom: "1px solid var(--line)" }}>
+          <div className="container" style={{ marginBottom: "40px" }}>
+            <p className="kicker rev">Galeria</p>
+          </div>
+          <div style={{ display: "flex", flexDirection: "column", gap: "4px" }}>
+            {project.galleryLayout.map((item, i) => {
+              if (item === "video" && project.video) {
+                return (
+                  <div key={i}>
+                    <VideoEmbed
+                      youtubeId={project.video.youtubeId}
+                      thumbnail={project.video.thumbnail}
+                      title={project.title}
+                    />
+                  </div>
+                );
+              }
+              if (Array.isArray(item)) {
+                return (
+                  <div key={i} style={{ display: "grid", gridTemplateColumns: `repeat(${item.length}, 1fr)`, gap: "4px" }}>
+                    {item.map((src, j) => (
+                      <Image
+                        key={j}
+                        src={src}
+                        alt={`${project.title} — imagem ${i + 1}`}
+                        width={0}
+                        height={0}
+                        sizes="50vw"
+                        style={{ width: "100%", height: "auto", display: "block" }}
+                      />
+                    ))}
+                  </div>
+                );
+              }
+              return (
+                <div key={i}>
+                  <Image
+                    src={item as string}
+                    alt={`${project.title} — imagem ${i + 1}`}
+                    width={0}
+                    height={0}
+                    sizes="100vw"
+                    style={{ width: "100%", height: "auto", display: "block" }}
+                  />
+                </div>
+              );
+            })}
+          </div>
+        </section>
+      )}
+
+      {/* GALERIA MASONRY (sem galleryLayout) */}
+      {!project.galleryLayout && project.gallery.length > 0 && (
         <section style={{ padding: "80px 0", borderBottom: "1px solid var(--line)" }}>
           <div className="container">
             <p className="kicker rev">Galeria</p>
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))", gap: "16px", marginTop: "40px" }}>
+            <div className="gallery-masonry" style={{ marginTop: "40px" }}>
               {project.gallery.map((src, i) => (
-                <div
-                  key={i}
-                  className="rev"
-                  style={{
-                    position: "relative",
-                    borderRadius: "var(--r-box)",
-                    overflow: "hidden",
-                    aspectRatio: "4/3",
-                    background: "var(--bg3)",
-                    transitionDelay: `${i * 0.08}s`,
-                  }}
-                >
+                <div key={i} style={{ breakInside: "avoid", marginBottom: "4px" }}>
                   <Image
                     src={src}
                     alt={`${project.title} — imagem ${i + 1}`}
-                    fill
-                    style={{ objectFit: "cover" }}
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    width={0}
+                    height={0}
+                    sizes="(max-width: 768px) 50vw, 33vw"
+                    style={{ width: "100%", height: "auto", display: "block" }}
                   />
                 </div>
               ))}
